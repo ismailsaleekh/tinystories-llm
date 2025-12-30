@@ -305,57 +305,58 @@ __all__ = ["CausalSelfAttention", "MLP", "Block", "GPT"]
 ## File Checklist
 
 ### Files to Create
-- [ ] `model/attention.py` - CausalSelfAttention class
-- [ ] `model/mlp.py` - MLP class
-- [ ] `model/block.py` - Block class
-- [ ] `model/gpt.py` - GPT class with generate()
-- [ ] `model/__init__.py` - Update exports
-- [ ] `tests/test_model.py` - All model tests
+- [x] `model/attention.py` - CausalSelfAttention class
+- [x] `model/mlp.py` - MLP class
+- [x] `model/block.py` - Block class
+- [x] `model/gpt.py` - GPT class with generate()
+- [x] `model/__init__.py` - Update exports
+- [x] `tests/test_model.py` - All model tests (16 tests)
 
 ### Implementation Checklist
 
 #### Attention (`model/attention.py`)
-- [ ] Combined Q, K, V projection (c_attn)
-- [ ] Output projection (c_proj)
-- [ ] Causal mask registered as buffer
-- [ ] Multi-head reshape logic
-- [ ] Scaled dot-product attention
-- [ ] Attention dropout
-- [ ] Residual dropout
+- [x] Combined Q, K, V projection (c_attn)
+- [x] Output projection (c_proj)
+- [x] Causal mask registered as buffer
+- [x] Multi-head reshape logic
+- [x] Scaled dot-product attention
+- [x] Attention dropout
+- [x] Residual dropout
 
 #### MLP (`model/mlp.py`)
-- [ ] Up projection (c_fc): n_embd → 4*n_embd
-- [ ] GELU activation
-- [ ] Down projection (c_proj): 4*n_embd → n_embd
-- [ ] Dropout
+- [x] Up projection (c_fc): n_embd → 4*n_embd
+- [x] GELU activation
+- [x] Down projection (c_proj): 4*n_embd → n_embd
+- [x] Dropout
 
 #### Block (`model/block.py`)
-- [ ] Pre-attention LayerNorm (ln_1)
-- [ ] CausalSelfAttention
-- [ ] Pre-MLP LayerNorm (ln_2)
-- [ ] MLP
-- [ ] Residual connections (both)
+- [x] Pre-attention LayerNorm (ln_1)
+- [x] CausalSelfAttention
+- [x] Pre-MLP LayerNorm (ln_2)
+- [x] MLP
+- [x] Residual connections (both)
 
 #### GPT (`model/gpt.py`)
-- [ ] Token embeddings (wte)
-- [ ] Position embeddings (wpe)
-- [ ] Embedding dropout
-- [ ] ModuleList of Blocks
-- [ ] Final LayerNorm (ln_f)
-- [ ] Output head (lm_head)
-- [ ] Weight tying (wte ↔ lm_head)
-- [ ] Weight initialization
-- [ ] Scaled init for residual projections
-- [ ] forward() with optional loss
-- [ ] generate() with temperature, top_k, top_p
-- [ ] get_num_params() helper
+- [x] Token embeddings (wte)
+- [x] Position embeddings (wpe)
+- [x] Embedding dropout
+- [x] ModuleList of Blocks
+- [x] Final LayerNorm (ln_f)
+- [x] Output head (lm_head)
+- [x] Weight tying (wte ↔ lm_head)
+- [x] Weight initialization
+- [x] Scaled init for residual projections
+- [x] forward() with optional loss
+- [x] generate() with temperature, top_k, top_p
+- [x] get_num_params() helper
 
 #### Tests (`tests/test_model.py`)
-- [ ] All shape tests pass
-- [ ] Loss computation test passes
-- [ ] Generation test passes
-- [ ] Weight tying test passes
-- [ ] Parameter count test passes
+- [x] All shape tests pass
+- [x] Loss computation test passes
+- [x] Generation test passes (3 variants: basic, top_k, top_p)
+- [x] Weight tying test passes
+- [x] Parameter count test passes
+- [x] Gradient flow test passes
 
 ---
 
